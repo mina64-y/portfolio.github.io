@@ -3,72 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>양미나 - 웹 개발자 포트폴리오</title>
-    <meta name="description" content="프론트엔드 웹 개발자 양미나의 포트폴리오입니다.">
+    <title>양미나 - 개발자 포트폴리오</title>
+    <meta name="description" content="개발자 양미나의 포트폴리오입니다.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- 네비게이션 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">양미나</a>
+    <!-- 표지 페이지 -->
+    <section id="cover" class="cover-page">
+        <!-- 상단 네비게이션 -->
+        <nav class="cover-nav">
+            <div class="nav-brand">
+                <span class="brand-text">MINA</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">홈</a></li>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#skills">기술</a></li>
-                <li><a href="#projects">프로젝트</a></li>
-                <li><a href="#contact">연락처</a></li>
+            <ul class="cover-nav-menu">
+                <li><a href="#main" class="nav-link active">Main</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#Project" class="nav-link">Project</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- 메인 섹션 -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>안녕하세요, <span class="highlight">양미나</span>입니다</h1>
-            <p class="hero-subtitle">사용자 경험을 중시하는 풀스택 개발자</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-                <a href="#contact" class="btn btn-secondary">연락하기</a>
+        <!-- 메인 포트폴리오 컨텐츠 -->
+        <div class="cover-content">
+            <div class="cover-hero">
+                <!-- 포트폴리오 텍스트 -->
+                <div class="hero-text">
+                    <h1 class="main-title">PORTFOLIO</h1>
+                </div>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="profile-circle">
-                <i class="fas fa-user"></i>
-            </div>
+
+        <!-- 스크롤 인디케이터 -->
+        <div class="scroll-indicator">
+            <a href="#main" class="scroll-down-btn">
+                <span class="scroll-text">Scroll Down</span>
+                <div class="scroll-arrow">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- 배경 장식 요소 -->
+        <div class="bg-elements">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
         </div>
     </section>
 
-    <!-- 소개 섹션 -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">소개</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>창의적이고 열정적인 개발자</h3>
-                    <p>
-                        신입 풀스택 개발자로, 프론트엔드부터 백엔드, AI까지 다양한 기술 스택을 
-                        활용하여 완성도 높은 웹 애플리케이션을 개발합니다. 사용자 중심의 
-                        직관적인 인터페이스와 효율적인 백엔드 시스템 구축이 전문 분야입니다.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h4>8+</h4>
-                            <p>완료 프로젝트</p>
+    <!-- 메인 섹션 -->
+    <section id="main" class="main-section">
+        <div class="main-content">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <div class="profile-circle">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="profile-text">
+                    <h2>안녕하세요, <span class="highlight">양미나</span>입니다</h2>
+                    <p class="main-subtitle">사용자 경험을 중시하는 풀스택 개발자</p>
+                    <div class="main-description">
+                        <p>
+                            <span class="contact-label">E-mail</span> 
+                            <span class="contact-value">mina0604.y@gmail.com</span>
+                            <span class="contact-separator"></span>
+                            <span class="contact-label">GitHub</span> 
+                            <span class="contact-value">https://github.com/mina64-y</span>
+                        </p>
+                    </div>
+
+                    <div class="main-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div class="stat-content">
+                                <h4>교육 이력</h4>
+                                <p>2024.12.30 ~ 2025.07.11</p>
+                                <span>미래교육원</span>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <h4>신입</h4>
-                            <p>개발 경력</p>
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <div class="stat-content">
+                                <h4>수상</h4>
+                                <p>2025.07.11</p>
+                                <span>미래교육원 팀프로젝트 우수상</span>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="main-buttons">
+                        <a href="#project" class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i>
+                            프로젝트 보기
+                        </a>
                     </div>
                 </div>
             </div>
@@ -77,22 +107,52 @@
 
     <!-- 기술 섹션 -->
     <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">기술 스택</h2>
+        <div class="skills-container">
+            <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
+                <!-- 프로그래밍 언어 -->
                 <div class="skill-category">
-                    <h3>Frontend</h3>
+                    <div class="category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>프로그래밍 언어</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-area"></i>
+                            <span>R</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 프론트엔드 -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>프론트엔드</h3>
+                    </div>
                     <div class="skill-items">
                         <div class="skill-item">
                             <i class="fab fa-react"></i>
                             <span>React</span>
                         </div>
                         <div class="skill-item">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-mobile-alt"></i>
                             <span>Flutter</span>
                         </div>
                         <div class="skill-item">
-                            <i class="fas fa-palette"></i>
+                            <i class="fab fa-html5"></i>
                             <span>HTML</span>
                         </div>
                         <div class="skill-item">
@@ -100,23 +160,41 @@
                             <span>CSS</span>
                         </div>
                         <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>JS</span>
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
                         </div>
                     </div>
                 </div>
                 
+                <!-- 백엔드 -->
                 <div class="skill-category">
-                    <h3>Backend</h3>
+                    <div class="category-header">
+                        <i class="fas fa-server"></i>
+                        <h3>백엔드</h3>
+                    </div>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <i class="fab fa-python"></i>
+                            <i class="fas fa-cogs"></i>
                             <span>Django</span>
                         </div>
                         <div class="skill-item">
                             <i class="fas fa-tasks"></i>
+                            <span>Django REST</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-clock"></i>
                             <span>Celery</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 데이터베이스 -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>데이터베이스</h3>
+                    </div>
+                    <div class="skill-items">
                         <div class="skill-item">
                             <i class="fas fa-database"></i>
                             <span>MySQL</span>
@@ -127,124 +205,91 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- AI/머신러닝 -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI/머신러닝</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>PyTorch</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-stethoscope"></i>
+                            <span>MONAI</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-sitemap"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 개발 도구 -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>개발 도구</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>VS Code</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 프로젝트 섹션 -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">프로젝트</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>임상·오믹스·영상 데이터 통합 CDSS 시스템 개발</h3>
-                        <p>딥러닝을 활용한 의료 영상 분석 시스템으로, 3D U-Net과 SwinUNETR 모델을 사용하여 높은 정확도의 진단을 제공합니다.</p>
-                        <div class="project-tech">
+    <!-- projects 섹션 -->
+    <section id="project" class="project">
+        <div class="projects-container">
+            <h2 class="section-title">Project</h2>
+            
+            <!-- 프로젝트 자기소개 - 깔끔한 텍스트 스타일 -->
+            <div class="project-intro-clean">
+                <h3 class="project-title-clean">
+                    임상·오믹스·영상 데이터 통합 <span class="highlight">CDSS 시스템</span>
+                </h3>
+                
+                <div class="project-description-clean">
+                    <p>딥러닝을 활용한 의료 영상 분석 시스템으로, 3D U-Net과 SwinUNETR 모델을 사용하여 높은 정확도의 진단을 제공합니다.</p>
+                </div>
+                
+                <div class="project-stats-clean">
+                    <span class="stat-clean">
+                        <div class="tech-tags">
                             <span>PyTorch</span>
                             <span>MONAI</span>
                             <span>Django</span>
                             <span>React</span>
                         </div>
-                        <div class="project-links">
-                            <a href="cdss_project-detail.html" class="btn btn-small">자세히 보기</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
+                    </span>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>췌장암 조기 진단 및 전이 예측 모델 개발</h3>
-                        <p>실시간 데이터 시각화와 머신러닝 예측 모델을 통합한 인터랙티브 대시보드입니다.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Recharts</span>
-                            <span>XGBoost</span>
-                            <span>Django REST</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="omics_project-detail.html" class="btn btn-small">자세히 보기</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
+                
+                <div class="project-action-clean">
+                    <a href="cdss_project.html" class="btn-clean">
+                        <i class="fas fa-arrow-right"></i>
+                        프로젝트 상세보기
+                    </a>
                 </div>
-
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>CT 영상 기반 암 예측 및 세분화 모델 개발</h3>
-                        <p>실시간 데이터 시각화와 머신러닝 예측 모델을 통합한 인터랙티브 대시보드입니다.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Recharts</span>
-                            <span>XGBoost</span>
-                            <span>Django REST</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="ct_project-detail.html" class="btn btn-small">자세히 보기</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- 연락처 섹션 -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">연락처</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>함께 일해요!</h3>
-                    <p>새로운 프로젝트나 협업 기회에 대해 언제든 연락주세요.</p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>mina0604.y@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>010-1234-5678</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>github.com/developer</span>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="이름" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="이메일" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="메시지" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">메시지 보내기</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- 푸터 -->
     <footer class="footer">
@@ -253,7 +298,6 @@
             <div class="social-links">
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
