@@ -5,303 +5,501 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 상세 - 양미나 포트폴리오</title>
     <link rel="stylesheet" href="cdss.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<body>
+    <!-- 고정 네비게이션 -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>HOME</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="#intro" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>프로젝트 소개</span>
+                </a>
+                <a href="#demo" class="nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    <span>시연</span>
+                </a>
+                <a href="#architecture" class="nav-link">
+                    <i class="fas fa-sitemap"></i>
+                    <span>아키텍처</span>
+                </a>
+                <a href="#features" class="nav-link">
+                    <i class="fas fa-cogs"></i>
+                    <span>기능</span>
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- 프로젝트 상세 섹션 -->
-    <section class="project-detail">
+    <main class="project-detail">
         <div class="container">
             <!-- 뒤로가기 버튼 -->
             <div class="back-button">
                 <a href="index.html" class="btn btn-outline">
-                    <i class="fas fa-arrow-left"></i> 
+                    <i class="fas fa-arrow-left"></i> 돌아가기
                 </a>
             </div>
 
             <!-- 프로젝트 헤더 -->
-            <div class="project-header">
-                <h1 id="project-title">임상·오믹스·영상 데이터 통합 CDSS 시스템 개발</h1>
-                <div class="project-meta">
-                    <span class="project-date">2025.05.14 - 2025.06.30</span>
-                    <span class="project-type">팀 프로젝트</span>
+            <div class="project-header-new">
+                <h1 class="project-title-main">임상·오믹스·영상 데이터 통합 CDSS 시스템</h1>
+                <p class="project-subtitle-main">Clinical Decision Support System</p>
+            </div>
+
+            <!-- 프로젝트 소개 섹션 -->
+            <div id="intro" class="section-card">
+                <div class="section-header-new">
+                    <h2 class="section-title-new">프로젝트 소개</h2>
+                    <div class="section-underline"></div>
+                </div>
+                
+                <div class="intro-showcase-item">
+                    <div class="feature-description">
+                        <div class="feature-details">
+                            <div class="feature-subtitle">목표</div>
+                            <p>의료진이 환자의 임상 데이터를 바탕으로 진단, 치료, 예후 예측 등의 의사결정을 보다 정확하고 효과적으로 내릴 수 있도록 지원하는 지능형 시스템입니다.</p>
+                        </div>
+                        <div class="feature-details">
+                            <div class="feature-subtitle">프로젝트 성과</div>
+                            <p><strong>수상:</strong> 미래융합원 팀프로젝트 우수상</p>
+                            <p><strong>기간:</strong> 2025.05.14 - 2025.06.30</p>
+                            <p><strong>팀원:</strong> 5명</p>
+                            <p><strong>담당:</strong> React 디자인, AI 모델 개발, Django 서버, Flutter 앱</p>
+                        </div>
+                    </div>
+                    <div class="feature-image">
+                        <div class="project-overview-table">
+                            <div class="overview-row">
+                                <div class="overview-label">언어</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">Python</span>
+                                        <span class="role-tag">JavaScript</span>
+                                        <span class="role-tag">Dart</span>
+                                        <span class="role-tag">HTML</span>
+                                        <span class="role-tag">CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-row">
+                                <div class="overview-label">Frontend</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">React</span>
+                                        <span class="role-tag">Flutter</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-row">
+                                <div class="overview-label">Backend <br>& <br>Database</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">Django</span>
+                                        <span class="role-tag">Celery</span>
+                                        <span class="role-tag">MariaDB</span>
+                                        <span class="role-tag">Redis</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="overview-row">
+                                <div class="overview-label">AI/ML</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">PyTorch</span>
+                                        <span class="role-tag">TensorFlow</span>
+                                        <span class="role-tag">MONAI</span>
+                                        <span class="role-tag">SwinUNETR</span>
+                                        <span class="role-tag">3D U-Net</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="overview-row">
+                                <div class="overview-label">ML<br>& <br>데이터분석</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">LightGBM</span>
+                                        <span class="role-tag">Imbalanced-learn</span>
+                                        <span class="role-tag">RandomForest</span>
+                                        <span class="role-tag">SVM</span>
+                                        <span class="role-tag">XGBoost</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overview-row">
+                                <div class="overview-label">Server<br>& <br>OS</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">GCP</span>
+                                        <span class="role-tag">Linux</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overview-row">
+                                <div class="overview-label">개발도구</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">Docker</span>
+                                        <span class="role-tag">GitHub</span>
+                                        <span class="role-tag">VS code</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overview-row">
+                                <div class="overview-label">시각화</div>
+                                <div class="overview-content">
+                                    <div class="role-tags">
+                                        <span class="role-tag">Recharts</span>
+                                        <span class="role-tag">Matplotlib</span>
+                                        <span class="role-tag">Seaborn</span>
+                                        <span class="role-tag">Plotly</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 프로젝트 내용 -->
-            <div class="project-content-detail">
-                <!-- 프로젝트 개요 -->
-                <div class="section-block">
-                    <h2>프로젝트 개요</h2>
-                    <div class="project-overview">
-                        <div class="overview-item">
-                            <h3>임상의사결정지원시스템 <br>(Clinical Dicision Support System, CDSS)</h3>
-                            <p id="project-purpose"></p>의료진이 환자의 임상 데이터를 바탕으로 진단, 치료, 
-                            예후 예측 등의 의사결정을 보다 정확하고 효과적으로 내릴 수 있도록 지원하는 지능형 시스템</p>
-                        </div>
-                        <div class="overview-item">
-                            <h3></h3>
-                            <ul id="project-features">
-                                <li>정확한 진단과 치료</li>
-                                <li>의료진 업무 부담 경감</li>
-                                <li>환자 맞춤형 치료 제공</li>
-                            </ul>
-                        </div>
-                    </div>
+            <!-- 프로젝트 시연 섹션 -->
+            <div id="demo" class="section-card">
+                <div class="section-header-new">
+                    <h2 class="section-title-new">프로젝트 시연</h2>
+                    <div class="section-underline"></div>
                 </div>
-
-                <!-- 기술 스택 -->
-                <div class="section-block">
-                    <h2>기술 스택
-                    </h2>
-                    <div class="tech-stack-detail">
-                        <div class="tech-category">
-                            <h3>Frontend</h3>
-                            <div class="tech-items" id="frontend-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Flutter</span>
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JS</span>
-                            </div>
-                        </div>
-                        <div class="tech-category">
-                            <h3>Backend</h3>
-                            <div class="tech-items" id="backend-tech">
-                                <span class="tech-tag">Django</span>
-                                <span class="tech-tag">Celery</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">Redis</span>
-                            </div>
-                        </div>
-                        <div class="tech-category">
-                            <h3>AI/DL</h3>
-                            <div class="tech-items" id="ai-tech">
-                                <span class="tech-tag">PyTorch</span>
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">MONAI</span>
-                                <span class="tech-tag">3D U-Net</span>
-                                <span class="tech-tag">SwinUNETR</span>
-                            </div>
-                        </div>
-                        <div class="tech-category">
-                            <h3>ML/데이터 분석</h3>
-                            <div class="tech-items" id="ai-tech">
-                                <span class="tech-tag">XGBoost</span>
-                                <span class="tech-tag">LightGBM</span>
-                                <span class="tech-tag">Imbalanced-learn</span>
-                                <span class="tech-tag">RandomForest</span>
-                                <span class="tech-tag">SVM</span>
-                            </div>
-                        </div>
-                        <div class="tech-category">
-                            <h3>의료 영상 처리</h3>
-                            <div class="tech-items" id="ai-tech">
-                                <span class="tech-tag">SimpleITK</span>
-                                <span class="tech-tag">Nibabel</span>
-                                <span class="tech-tag">NiiVue</span>
-                                <span class="tech-tag">DCMTK</span>
-                                <span class="tech-tag">Orthanc Server</span>
-                            </div>
-                        </div>
-                        <div class="tech-category">
-                            <h3>데이터 시각화</h3>
-                            <div class="tech-items" id="ai-tech">
-                                <span class="tech-tag">Recharts</span>
-                                <span class="tech-tag">Matplotlib</span>
-                                <span class="tech-tag">Seaborn</span>
-                                <span class="tech-tag">Plotly</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 
-                 
-                <!-- CDSS 워크플로우 - 양방향 화살표 개선 -->
-                <div class="workflow-simple-horizontal">
-                    <!-- 헤더 -->
-                    <div class="header-simple">
-                        <h1>워크플로우</h1>
+                <div class="demo-showcase-item">
+                    <div class="demo-video-large">
+                        <iframe src="https://drive.google.com/file/d/1f0AqfE_oMJkrDA20BM-tBZXZrrpFLGvp/preview"
+                                class="demo-iframe-large"
+                                frameborder="0"
+                                allow="autoplay"
+                                allowfullscreen>
+                        </iframe>
                     </div>
-                    
-                    <!-- 상단: 원무과 -->
-                    <div class="top-section">
-                        <div class="dept-card admin">
-                            <div class="dept-icon">
-                                <i class="fas fa-user-plus"></i>
-                            </div>
-                            <h3>원무과</h3>
-                            <ul>
-                                <li>환자 접수</li>
-                                <li>환자 예약</li>
-                                <li>앱 인증코드</li>
-                            </ul>
+                    <div class="demo-description-compact">
+                        <div class="feature-details">
+                            <div class="feature-subtitle">영상 소개</div>
+                            <p>CDSS 시스템의 전체적인 기능과 사용자 인터페이스를 확인할 수 있는 데모 영상입니다.</p>
                         </div>
-                        
-                        <!-- 단방향 화살표 (원무과 → 의사) -->
-                        <div class="arrow-unified vertical single">
-                            <span class="arrow-label">환자 정보</span>
-                            <div class="arrow-circle">
-                                <i class="fas fa-arrow-down"></i>
-                            </div>
+                        <div class="feature-details">
+                            <div class="feature-subtitle">주요 내용</div>
+                            <p>• 역할별 로그인 시스템<br>
+                            • AI 기반 진단 보조 기능<br>
+                            • 환자 데이터 통합 관리<br>
+                            • 모바일 앱 연동 서비스</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- 시스템 아키텍처 섹션 -->
+            <div id="architecture" class="section-card">
+                <div class="section-header-new">
+                    <h2 class="section-title-new">시스템 아키텍처</h2>
+                    <div class="section-underline"></div>
+                </div>
+                <div class="single-image-container">
+                    <img src="https://drive.google.com/thumbnail?id=1wnobDZxquWiy1Y4EIR-p42JSAIMjiQKV&sz=w1200" 
+                         alt="CDSS 시스템 아키텍처"
+                         class="single-image">
+                </div>
+            </div>
+
+            <!-- 주요 기능 소개 섹션 -->
+            <div id="features" class="section-card">
+                <div class="section-header-new">
+                    <h2 class="section-title-new">기능 소개</h2>
+                    <div class="section-underline"></div>
+                </div>
+                
+                <div class="features-showcase">
+                    <!-- 의사 대시보드 -->
+                    <div class="feature-showcase-item">
+                        <div class="feature-image-with-gallery">
+                            <div class="main-image-container">
+                                <img id="mainImage" 
+                                    src="https://drive.google.com/thumbnail?id=1hZYXtMfO9SFAlVilzE4GpSmHJVDwWDEh&sz=w1200" 
+                                    alt="환자 데이터 통합 관리 화면"
+                                    class="main-image">
+                            </div>
+                            
+                            <div class="thumbnail-gallery">
+                                <img src="https://drive.google.com/thumbnail?id=1hZYXtMfO9SFAlVilzE4GpSmHJVDwWDEh&sz=w300" 
+                                    alt="의사 대시보드 메인"
+                                    class="thumbnail active"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1hZYXtMfO9SFAlVilzE4GpSmHJVDwWDEh&sz=w1200"
+                                    data-target="mainImage">
+                                <img src="https://drive.google.com/thumbnail?id=18EaE17baLnvOo5RC83jbYQxP4uwbZ8aG&sz=w300" 
+                                alt="의사 대시보드 기능 3"
+                                class="thumbnail"
+                                data-full-src="https://drive.google.com/thumbnail?id=18EaE17baLnvOo5RC83jbYQxP4uwbZ8aG&sz=w1200"
+                                data-target="mainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1o4HcwRgIO7KcJlwVv0otOmw-0EgtHip5&sz=w300" 
+                                    alt="의사 대시보드 기능 1"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1o4HcwRgIO7KcJlwVv0otOmw-0EgtHip5&sz=w1200"
+                                    data-target="mainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1yHuNK-2-sQ6HVtxTfBNRQqSLTlkBXP26&sz=w300" 
+                                    alt="의사 대시보드 기능 2"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1yHuNK-2-sQ6HVtxTfBNRQqSLTlkBXP26&sz=w1200"
+                                    data-target="mainImage">
+                                <img src="https://drive.google.com/thumbnail?id=1srrVrSdXwtQ20EcsJ60739i1_bvVzzbE&sz=w300" 
+                                    alt="의사 대시보드 기능 4"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1srrVrSdXwtQ20EcsJ60739i1_bvVzzbE&sz=w1200"
+                                    data-target="mainImage">
+                            </div>
+                        </div>
+                        <div class="feature-description">
+                            <h3>의사 대시보드</h3>
+                            <div class="feature-details">
+                                <div class="feature-subtitle">소개</div>
+                                <p>간호부, 영상의학과, 원무과에서 입력된 임상 데이터, 오믹스 데이터, 영상 데이터를 통합적으로 수집하고 대시보드에서 환자의 상태를 한눈에 파악할 수 있도록 구성했습니다.</p>
+                            </div>
+                            <div class="feature-details">
+                                <div class="feature-subtitle">기능</div>
+                                <p>환자 확인, 간호 일지 확인, CT분석 결과 확인, 임상 데이터 예측, 약물 상호작용, AI논문 검색, 환자 예약 캘린더</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- 중간: 가로 배치 -->
-                    <div class="middle-section">
-                        <!-- 영상의학과 -->
-                        <div class="dept-card radiology">
-                            <div class="dept-icon">
-                                <i class="fas fa-x-ray"></i>
+
+                    <!-- 간호부 (새 이미지 추가) -->
+                    <div class="feature-showcase-item">
+                        <div class="feature-image-with-gallery">
+                            <div class="main-image-container">
+                                <img id="nursingMainImage"
+                                     src="https://drive.google.com/thumbnail?id=1gS_wEfFnGFi41EO19zworwHakBpVVyS6&sz=w1200"
+                                     alt="AI 진단 보조 시스템 화면"
+                                     class="main-image">
                             </div>
+                            
+                            <div class="thumbnail-gallery">
+                                <img src="https://drive.google.com/thumbnail?id=1gS_wEfFnGFi41EO19zworwHakBpVVyS6&sz=w300"
+                                     alt="간호부 메인"
+                                     class="thumbnail active nursing-thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1gS_wEfFnGFi41EO19zworwHakBpVVyS6&sz=w1200"
+                                     data-target="nursingMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1v8MWIDdk0AOY3BRgbaopH6gpw7MjjJbS&sz=w300"
+                                    alt="간호부 기능 5"
+                                    class="thumbnail nursing-thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1v8MWIDdk0AOY3BRgbaopH6gpw7MjjJbS&sz=w1200"
+                                    data-target="nursingMainImage">
+
+                                <img src="https://drive.google.com/thumbnail?id=1ZeZhXhsebsYyfbXnCP-JkKC1TfWZsEMY&sz=w300"
+                                alt="간호부 기능 4"
+                                class="thumbnail nursing-thumbnail"
+                                data-full-src="https://drive.google.com/thumbnail?id=1ZeZhXhsebsYyfbXnCP-JkKC1TfWZsEMY&sz=w1200"
+                                data-target="nursingMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1e-2KczSCUA1XWe4qr66F4vBqignf-F3r&sz=w300"
+                                     alt="간호부 기능 1"
+                                     class="thumbnail nursing-thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1e-2KczSCUA1XWe4qr66F4vBqignf-F3r&sz=w1200"
+                                     data-target="nursingMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1bR4ARQ1OZ_bJnjVQ64yjwcN-P-DYO61Z&sz=w300"
+                                     alt="간호부 기능 2"
+                                     class="thumbnail nursing-thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1bR4ARQ1OZ_bJnjVQ64yjwcN-P-DYO61Z&sz=w1200"
+                                     data-target="nursingMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=12L5KM02gkneb20bnX6EUpDzDXhJAq38s&sz=w300"
+                                     alt="간호부 기능 3"
+                                     class="thumbnail nursing-thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=12L5KM02gkneb20bnX6EUpDzDXhJAq38s&sz=w1200"
+                                     data-target="nursingMainImage">
+                                
+                                <!-- 새 이미지 추가 -->
+                                
+                            </div>
+                        </div>
+                        <div class="feature-description">
+                            <h3>간호부</h3>
+                            <div class="feature-details">
+                                <div class="feature-subtitle">기능</div>
+                                <p>간호일지 AI 자동작성, OMICS 입력 및 분석, 클리닉 데이터 입력 및 분석</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 영상의학과 (새 이미지들 추가) -->
+                    <div class="feature-showcase-item">
+                        <div class="feature-image-with-gallery">
+                            <div class="main-image-container">
+                                <img id="radiologyMainImage"
+                                     src="https://drive.google.com/thumbnail?id=1pg3TL3FnE5Mv-h_-E3T869VKz-5QvDym&sz=w1200"
+                                     alt="영상의학과 메인 화면"
+                                     class="main-image">
+                            </div>
+                            
+                            <div class="thumbnail-gallery">
+                                <img src="https://drive.google.com/thumbnail?id=1pg3TL3FnE5Mv-h_-E3T869VKz-5QvDym&sz=w300"
+                                     alt="영상의학과 메인"
+                                     class="thumbnail active"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1pg3TL3FnE5Mv-h_-E3T869VKz-5QvDym&sz=w1200"
+                                     data-target="radiologyMainImage">
+                                <img src="https://drive.google.com/thumbnail?id=1gN_DfeBy6R36At418eWrS-1b3l-px68L&sz=w300"
+                                    alt="영상의학과 기능 4"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1gN_DfeBy6R36At418eWrS-1b3l-px68L&sz=w1200"
+                                    data-target="radiologyMainImage">
+                                <img src="https://drive.google.com/thumbnail?id=1ggcS6T-ewPMuRt0NavHE2BSvOjPf8qYa&sz=w300"
+                                    alt="영상의학과 기능 3"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1ggcS6T-ewPMuRt0NavHE2BSvOjPf8qYa&sz=w1200"
+                                    data-target="radiologyMainImage">
+
+                                <img src="https://drive.google.com/thumbnail?id=1JBFzp0Il5PUZUuQlGi2kZIKUuk_kDzOc&sz=w300"
+                                     alt="영상의학과 기능 1"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1JBFzp0Il5PUZUuQlGi2kZIKUuk_kDzOc&sz=w1200"
+                                     data-target="radiologyMainImage">
+                            </div>
+                        </div>
+                        <div class="feature-description">
                             <h3>영상의학과</h3>
-                            <ul>
-                                <li>CT 영상 업로드</li>
-                                <li>CT 확인</li>
-                                <li>AI 분할 CT</li>
-                                <li>3D 이미지</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 양방향 화살표 - 위아래 배치 -->
-                        <div class="arrow-unified horizontal bidirectional">
-                            <!-- 위쪽 내용 -->
-                            <div class="arrow-content top">
-                                <span class="arrow-label">촬영 요청</span>
+                            <div class="feature-details">
+                                <div class="feature-subtitle">기능</div>
+                                <p>CT 업로드, CT확인, AI 영상 분석, 3D 이미지 생성 및 시각화</p>
                             </div>
-                            
-                            <!-- 양방향 화살표 -->
-                            <div class="arrow-double">
-                                <div class="arrow-circle left">
-                                    <i class="fas fa-arrow-left"></i>
-                                </div>
-                                <div class="arrow-line"></div>
-                                <div class="arrow-circle right">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- 아래쪽 내용 -->
-                            <div class="arrow-content bottom">
-                                <span class="arrow-label">분석 결과</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 의사 (중앙) -->
-                        <div class="dept-card doctor central">
-                            <div class="dept-icon">
-                                <i class="fas fa-user-md"></i>
-                            </div>
-                            <h3>의사</h3>
-                            <ul>
-                                <li>환자 확인</li>
-                                <li>간호일지 확인</li>
-                                <li>CT 분석결과</li>
-                                <li>임상데이터 예측</li>
-                                <li>약물 상호작용</li>
-                                <li>AI 논문 검색</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 양방향 화살표 - 위아래 배치 -->
-                        <div class="arrow-unified horizontal bidirectional">
-                            <!-- 위쪽 내용 -->
-                            <div class="arrow-content top">
-                                <span class="arrow-label">검사 오더</span>
-                            </div>
-                            
-                            <!-- 양방향 화살표 -->
-                            <div class="arrow-double">
-                                <div class="arrow-circle left">
-                                    <i class="fas fa-arrow-left"></i>
-                                </div>
-                                <div class="arrow-line"></div>
-                                <div class="arrow-circle right">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- 아래쪽 내용 -->
-                            <div class="arrow-content bottom">
-                                <span class="arrow-label">검사 결과</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 간호사 -->
-                        <div class="dept-card nurse">
-                            <div class="dept-icon">
-                                <i class="fas fa-user-nurse"></i>
-                            </div>
-                            <h3>간호사</h3>
-                            <ul>
-                                <li>임상데이터 입력</li>
-                                <li>OMICS 데이터</li>
-                                <li>AI 간호일지</li>
-                            </ul>
                         </div>
                     </div>
-                </div>
 
+                    <!-- 원무과 (새 이미지들 추가) -->
+                    <div class="feature-showcase-item">
+                        <div class="feature-image-with-gallery">
+                            <div class="main-image-container">
+                                <img id="adminMainImage"
+                                     src="https://drive.google.com/thumbnail?id=1A4TAq6XFtFVOvGYIhdchgfOI_wMQ_mBZ&sz=w1200"
+                                     alt="원무과 메인 화면"
+                                     class="main-image">
+                            </div>
+                            
+                            <div class="thumbnail-gallery">
+                                <img src="https://drive.google.com/thumbnail?id=1A4TAq6XFtFVOvGYIhdchgfOI_wMQ_mBZ&sz=w300"
+                                     alt="원무과 메인"
+                                     class="thumbnail active"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1A4TAq6XFtFVOvGYIhdchgfOI_wMQ_mBZ&sz=w1200"
+                                     data-target="adminMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=17KEH6BcVIc1xAYBQRandRVRnP_gtgTZ2&sz=w300"
+                                     alt="원무과 기능 2"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=17KEH6BcVIc1xAYBQRandRVRnP_gtgTZ2&sz=w1200"
+                                     data-target="adminMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1b2kJFwlFx0ujsUQuLKnk1rnt0q8t_UMN&sz=w300"
+                                     alt="원무과 기능 3"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1b2kJFwlFx0ujsUQuLKnk1rnt0q8t_UMN&sz=w1200"
+                                     data-target="adminMainImage">
 
-                <!-- 프로젝트 시연 -->
-                <div class="section-block">
-                    <h2>프로젝트 시연</h2>
-                    <iframe
-                    src="https://drive.google.com/file/d/1G8IzdvrvNSTXqTAxogNxReKDaNcFppij/preview"
-                    width="900"
-                    height="540"
-                    allow="autoplay">
-                    </iframe>
-                </div>
-
-
-                <!-- 개발 과정 -->
-                <div class="section-block">
-                    <h2>개발 과정</h2>
-                    <div class="development-process">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h3>프로젝트 주제 선정</h3>
-                                <p>CDSS라는 큰 주제를 정하고, 세부 사항들에 대해 선정했습니다.</p>
+                                <img src="https://drive.google.com/thumbnail?id=1yTcEUa-MqL5N_tKSiycy_FjljJnqRQW-&sz=w300"
+                                    alt="원무과 기능 1"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=1yTcEUa-MqL5N_tKSiycy_FjljJnqRQW-&sz=w1200"
+                                    data-target="adminMainImage">
                             </div>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h3>Frontend/Backend 시스템 설계</h3>
-                                <p>django, react, flutter 기반으로 한 시스템을 설계했습니다.</p>
+                        <div class="feature-description">
+                            <h3>원무과</h3>
+                            <div class="feature-details">
+                                <div class="feature-subtitle">기능</div>
+                                <p>환자 접수, 예약 관리, 앱 인증코드 발급, 환자 정보 관리</p>
                             </div>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h3>데이터 전처리 및 AI 모델 구축</h3>
-                                <p>데이터 전처리 및 AI 모델을 학습시키고 성능을 최적화했습니다.</p>
+                    </div>
+
+                    
+                    <!-- 환자 맞춤 모바일 서비스 (새 이미지들 추가) -->
+                    <div class="feature-showcase-item">
+                        <div class="feature-image-with-gallery">
+                            <div class="main-image-container">
+                                <img id="mobileMainImage"
+                                     src="https://drive.google.com/thumbnail?id=171YiDk9So-fwkPq9yDQcx-PZA6zHIzHN&sz=w1200"
+                                     alt="모바일 앱 메인 화면"
+                                     class="main-image">
+                            </div>
+                            
+                            <div class="thumbnail-gallery">
+                                <img src="https://drive.google.com/thumbnail?id=166XTPNcpKZV8gI0lXdz-_96nqnF-SeIP&sz=w300"
+                                     alt="모바일 앱 메인"
+                                     class="thumbnail active"
+                                     data-full-src="https://drive.google.com/thumbnail?id=166XTPNcpKZV8gI0lXdz-_96nqnF-SeIP&sz=w1200"
+                                     data-target="mobileMainImage">
+
+                                <img src="https://drive.google.com/thumbnail?id=1I-0a6TTwpw0ewvEgVhP61FhpY6HMtmTr&sz=w300"
+                                     alt="모바일 앱 기능 5"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1I-0a6TTwpw0ewvEgVhP61FhpY6HMtmTr&sz=w1200"
+                                     data-target="mobileMainImage">
+
+                                <img src="https://drive.google.com/thumbnail?id=1hGER5LGw8ldL1yJVnv7j-numquRRwANQ&sz=w300"
+                                     alt="모바일 앱 기능 4"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1hGER5LGw8ldL1yJVnv7j-numquRRwANQ&sz=w1200"
+                                     data-target="mobileMainImage">
+
+                                <img src="https://drive.google.com/thumbnail?id=171YiDk9So-fwkPq9yDQcx-PZA6zHIzHN&sz=w300"
+                                     alt="모바일 앱 메인"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=171YiDk9So-fwkPq9yDQcx-PZA6zHIzHN&sz=w1200"
+                                     data-target="mobileMainImage">
+
+                                <img src="https://drive.google.com/thumbnail?id=1Gd-bQBcYe3OTplKBLubFFMxPVZerg1jn&sz=w300"
+                                     alt="모바일 앱 기능 2"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1Gd-bQBcYe3OTplKBLubFFMxPVZerg1jn&sz=w1200"
+                                     data-target="mobileMainImage">
+                                
+                                <img src="https://drive.google.com/thumbnail?id=1VKgvh6shdjm6fT05PhxgIdKIqUonroAA&sz=w300"
+                                     alt="모바일 앱 기능 3"
+                                     class="thumbnail"
+                                     data-full-src="https://drive.google.com/thumbnail?id=1VKgvh6shdjm6fT05PhxgIdKIqUonroAA&sz=w1200"
+                                     data-target="mobileMainImage">
+                                <img src="https://drive.google.com/thumbnail?id=10KBe6SOkocltHMFnO7dsrNvXuaCc3sE5&sz=w300"
+                                    alt="모바일 앱 기능 6"
+                                    class="thumbnail"
+                                    data-full-src="https://drive.google.com/thumbnail?id=10KBe6SOkocltHMFnO7dsrNvXuaCc3sE5&sz=w1200"
+                                    data-target="mobileMainImage">
                             </div>
                         </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>각 서버 API 연결</h3>
-                                <p>전체 시스템을 통합하고, API연결하며 종합적인 테스트를 진행했습니다.</p>
-                            </div>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>Frontend 기능 구현 및 UI 디자인</h3>
-                                <p>react 및 flutter로 웹/앱 기능 구현 및 디자인을 진행했습니다.</p>
+                        <div class="feature-description">
+                            <h3>환자 맞춤 모바일 서비스</h3>
+                            <div class="feature-details">
+                                <div class="feature-subtitle">기능</div>
+                                <p> 실시간 예약, 예약확인, 병원, 응급실, 약국 검색</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- 푸터 -->
     <footer class="footer">
@@ -310,6 +508,7 @@
         </div>
     </footer>
 
-    <script src="project-detail.js"></script>
+    <!-- JavaScript -->
+     <script src="script.js"></script>
 </body>
 </html>
