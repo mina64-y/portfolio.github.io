@@ -99,48 +99,60 @@ html {
 
 /* =============== 섹션 공통 설정 =============== */
 section {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: auto;
+    height: auto;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding-top: 72px;
+    padding: 120px 0 80px 0;
     box-sizing: border-box;
+    position: relative;
+    clear: both;
 }
 
-/* =============== 섹션 배경색만 수정 =============== */
+/* 표지 페이지만 고정 높이 유지 */
+.cover-page {
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: 72px;
+}
 
-/* 표지는 하늘색 그라데이션 유지 */
+/* 다른 섹션들은 네비게이션 높이 고려 */
+section:not(.cover-page) {
+    padding-top: calc(72px + 80px);
+}
+
+/* =============== 섹션 배경색 설정 =============== */
 .cover-page {
     background: linear-gradient(135deg, #cde6fa 0%, #7bb6fc 100%);
 }
 
-/* 메인 섹션 - 흰색 배경 */
 .main-section {
     background: #ffffff;
+    padding: 150px 0 120px 0;
 }
 
-/* 기술 섹션 - 연한 회색 배경 */
 .skills {
     background: #f8f9fa;
-    padding: 0;
-    min-height: 100vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+    padding: 150px 0 200px 0;
+    margin-bottom: 200px;
+    position: relative;
+    z-index: 1;
 }
 
-/* 프로젝트 섹션 - 흰색 배경 */
-.projects {
-    background: #ffffff;
-    padding: 0;
-    min-height: 100vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+/* 프로젝트 섹션을 완전한 흰색 배경으로 설정 */
+.projects, .project {
+    background: #ffffff !important;
+    padding: 200px 0 150px 0;
+    margin-top: 200px;
+    position: relative;
+    z-index: 2;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
 }
 
-/* 푸터 - 어두운 색 유지 */
 .footer {
     min-height: 220px;
     background: var(--footer-bg);
@@ -148,8 +160,49 @@ section {
     padding: 36px 0 10px 0;
     text-align: center;
     width: 100%;
+    margin-top: 100px;
+    position: relative;
+    z-index: 3;
 }
 
+/* 프로젝트 섹션 전체 배경 흰색으로 확장 */
+.project::before {
+    content: '';
+    display: block;
+    height: 200px;
+    width: 100vw;
+    background: #ffffff;
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.project::after {
+    content: '';
+    display: block;
+    height: 200px;
+    width: 100vw;
+    background: #ffffff;
+    position: absolute;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Skills 섹션 분리를 위한 안전 장치 */
+.skills::after {
+    content: '';
+    display: block;
+    height: 200px;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+}
 
 /* =============== 표지 페이지 =============== */
 .cover-content {
@@ -378,7 +431,29 @@ section {
 .main-description p { 
     font-size: 1rem; 
     color: #3b567e; 
-    margin-bottom: 7px;
+    margin: 0;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-label {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+.contact-value {
+    color: #3b567e;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.contact-separator {
+    width: 20px;
+    display: inline-block;
 }
 
 .main-stats {
@@ -446,6 +521,8 @@ section {
 
 .btn-primary:hover {
     background: #377fcc;
+    box-shadow: 0 6px 20px rgba(69,150,228,0.25);
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -456,6 +533,9 @@ section {
 
 .btn-secondary:hover {
     background: var(--accent-bg);
+    color: #2c3e50;
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .btn-small {
@@ -475,14 +555,6 @@ section {
 }
 
 /* =============== Skills 섹션 =============== */
-.skills {
-    padding: 0;
-    min-height: 100vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-
 .skills-container {
     width: 1200px;
     max-width: 96vw;
@@ -515,7 +587,7 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
 }
 
@@ -526,6 +598,8 @@ section {
     padding: 2rem 1.5rem;
     border: 1px solid var(--main-border);
     transition: box-shadow 0.22s, transform 0.22s;
+    position: relative;
+    z-index: 1;
 }
 
 .skill-category:hover {
@@ -587,18 +661,10 @@ section {
     font-weight: 500;
 }
 
-/* =============== Projects 섹션 =============== */
-.projects {
-    padding: 0;
-    min-height: 100vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-
+/* =============== Projects/Project 섹션 통합 =============== */
 .projects-container {
-    width: 900px;
-    max-width: 90vw;
+    width: 1200px;
+    max-width: 95vw;
     margin: 0 auto;
     padding: 0;
 }
@@ -676,184 +742,12 @@ section {
     gap: 0.5rem;
 }
 
-/* =============== 푸터 =============== */
-.footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 30px;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: #fff;
-    font-size: 1.36rem;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #4596e4;
-}
-
-/* =============== 반응형 디자인 =============== */
-@media (max-width: 1200px) {
-    .main-content, .skills-container, .projects-container { 
-        width: 96vw; 
-        max-width: 100vw;
-    }
-}
-
-@media (max-width: 880px) {
-    .profile-section { 
-        flex-direction: column; 
-        gap: 32px;
-    }
-    .profile-image { 
-        margin-bottom: 8px;
-    }
-    .profile-text { 
-        min-width: 250px; 
-        align-items: center;
-        text-align: center;
-    }
-    .projects-container { 
-        width: 94vw;
-    }
-    .skills-container { 
-        width: 98vw;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-brand { 
-        left: 8px; 
-        font-size: 1.15rem;
-    }
-    .cover-nav-menu { 
-        gap: 15px;
-    }
-    .nav-link { 
-        font-size: 14px;
-    }
-    section {
-        padding: 72px 0 0 0;
-    }
-}
-
-@media (max-width: 600px) {
-    .cover-content, section { 
-        padding-top: 60px;
-    }
-    .main-title { 
-        font-size: 32px; 
-        word-spacing: 4px;
-    }
-    .profile-circle { 
-        width: 120px; 
-        height: 120px; 
-        font-size: 3.5rem;
-    }
-    .profile-text h2 { 
-        font-size: 2rem;
-    }
-    .main-stats { 
-        gap: 18px; 
-        flex-direction: column;
-    }
-    .btn { 
-        font-size: 15px; 
-        padding: 7px 14px;
-    }
-}
-
-@media (max-width: 800px) {
-    section {
-        min-height: 100vh;
-        height: 100vh;
-        padding: 72px 0 0 0;
-    }
-    .main-section, .cover-page, .skills, .projects {
-        padding: 72px 10px 0 10px;
-    }
-}
-
-/* 이메일, 깃허브 한 줄 표시 스타일 */
-.main-description {
-    margin: 20px 0 4px 0;
-}
-
-.main-description p {
-    font-size: 1rem;
-    color: #3b567e;
-    margin: 0;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.contact-label {
-    font-weight: 700;
-    color: var(--accent);
-    margin-right: 8px;
-}
-
-.contact-value {
-    color: #3b567e;
-    font-weight: 500;
-    word-break: break-all;
-}
-
-.contact-separator {
-    width: 20px;
-    display: inline-block;
-}
-
-/* 반응형: 모바일에서는 줄바꿈 허용 */
-@media (max-width: 600px) {
-    .main-description p {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    
-    .contact-separator {
-        display: none;
-    }
-    
-    .contact-value {
-        font-size: 0.9rem;
-    }
-}
-
-/* =============== Project Section =============== */
-.project {
-    background: #ffffff;
-    padding: 0;
-    min-height: 100vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-
-.projects-container {
-    width: 1200px;
-    max-width: 95vw;
-    margin: 0 auto;
-    padding: 0;
-}
-
-/* 상단 프로젝트 제목 */
+/* =============== Project Section 상세 =============== */
 .project-header-top {
     text-align: center;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 3;
 }
 
 .project-title {
@@ -875,7 +769,6 @@ section {
     display: inline;
 }
 
-/* 메인 컨테이너: 왼쪽 이미지, 오른쪽 테이블 */
 .project-main-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -889,7 +782,6 @@ section {
     margin: 0 auto;
 }
 
-/* =============== 왼쪽: 이미지 갤러리 =============== */
 .project-media {
     display: flex;
     flex-direction: column;
@@ -934,7 +826,6 @@ section {
     transform: scale(1.02);
 }
 
-/* 프로젝트 액션 버튼 */
 .project-actions {
     display: flex;
     flex-direction: column;
@@ -958,31 +849,6 @@ section {
     box-shadow: 0 4px 15px rgba(69,150,228,0.10);
 }
 
-.btn-primary {
-    background: var(--accent);
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: #377fcc;
-    box-shadow: 0 6px 20px rgba(69,150,228,0.25);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: #fff;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-}
-
-.btn-secondary:hover {
-    background: var(--accent-bg);
-    color: #2c3e50;
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-/* =============== 오른쪽: 프로젝트 정보 테이블 =============== */
 .project-info {
     display: flex;
     flex-direction: column;
@@ -1038,8 +904,70 @@ section {
     margin-bottom: 0;
 }
 
+/* =============== 푸터 =============== */
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.36rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #4596e4;
+}
+
 /* =============== 반응형 디자인 =============== */
+@media (max-width: 1200px) {
+    .main-content, .skills-container, .projects-container { 
+        width: 96vw; 
+        max-width: 100vw;
+    }
+}
+
+/* 태블릿 크기 */
 @media (max-width: 1024px) {
+    section {
+        height: auto;
+        min-height: auto;
+        padding: 100px 0 80px 0;
+    }
+    
+    .main-section {
+        padding: 120px 0 100px 0;
+    }
+    
+    .skills {
+        padding: 120px 0 150px 0;
+        margin-bottom: 150px;
+    }
+    
+    .project {
+        padding: 150px 0 120px 0;
+        margin-top: 150px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+    }
+    
+    .skill-category {
+        padding: 1.5rem 1.2rem;
+    }
+
     .project-main-container {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1066,7 +994,95 @@ section {
     }
 }
 
+@media (max-width: 880px) {
+    .profile-section { 
+        flex-direction: column; 
+        gap: 32px;
+    }
+    .profile-image { 
+        margin-bottom: 8px;
+    }
+    .profile-text { 
+        min-width: 250px; 
+        align-items: center;
+        text-align: center;
+    }
+    .projects-container { 
+        width: 94vw;
+    }
+    .skills-container { 
+        width: 98vw;
+    }
+}
+
+/* 모바일 크기 */
 @media (max-width: 768px) {
+    .nav-brand { 
+        left: 8px; 
+        font-size: 1.15rem;
+    }
+    .cover-nav-menu { 
+        gap: 15px;
+    }
+    .nav-link { 
+        font-size: 14px;
+    }
+    
+    section {
+        height: auto;
+        min-height: auto;
+        padding: 80px 0 60px 0;
+    }
+    
+    .main-section {
+        padding: 100px 0 80px 0;
+    }
+    
+    .skills {
+        padding: 100px 0 120px 0;
+        margin-bottom: 120px;
+    }
+    
+    .project {
+        padding: 120px 0 100px 0;
+        margin-top: 120px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding-left: calc(50vw - 50%);
+        padding-right: calc(50vw - 50%);
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skills-container {
+        width: 95vw;
+        padding: 0 10px;
+    }
+    
+    .skill-category {
+        padding: 1.2rem 1rem;
+    }
+    
+    .skill-items {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 0.4rem;
+    }
+    
+    .skill-item {
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .skill-item i {
+        font-size: 1.4rem;
+    }
+    
+    .skill-item span {
+        font-size: 0.9rem;
+    }
+
     .project-main-container {
         padding: 30px 25px;
         gap: 35px;
@@ -1100,6 +1116,54 @@ section {
 }
 
 @media (max-width: 600px) {
+    .cover-content, section { 
+        padding-top: 60px;
+    }
+    .main-title { 
+        font-size: 32px; 
+        word-spacing: 4px;
+    }
+    .profile-circle { 
+        width: 120px; 
+        height: 120px; 
+        font-size: 3.5rem;
+    }
+    .profile-text h2 { 
+        font-size: 2rem;
+    }
+    .main-stats { 
+        gap: 18px; 
+        flex-direction: column;
+    }
+    .btn { 
+        font-size: 15px; 
+        padding: 7px 14px;
+    }
+    
+    .main-description p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .contact-separator {
+        display: none;
+    }
+    
+    .contact-value {
+        font-size: 0.9rem;
+    }
+    
+    .skills {
+        padding: 80px 0 100px 0;
+        margin-bottom: 100px;
+    }
+    
+    .project {
+        padding: 100px 0 80px 0;
+        margin-top: 100px;
+    }
+
     .project-gallery-grid {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -1122,7 +1186,39 @@ section {
     }
 }
 
+/* 매우 작은 모바일 */
 @media (max-width: 480px) {
+    .skills-container {
+        width: 98vw;
+        padding: 0 5px;
+    }
+    
+    .skill-category {
+        padding: 1rem 0.8rem;
+    }
+    
+    .category-header h3 {
+        font-size: 1rem;
+    }
+    
+    .skill-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.3rem;
+    }
+    
+    .skill-item {
+        padding: 0.7rem 0.4rem;
+    }
+    
+    .skill-item i {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .skill-item span {
+        font-size: 0.8rem;
+    }
+
     .project-image {
         height: 120px;
     }
@@ -1133,5 +1229,12 @@ section {
     
     .project-title {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .main-section, .cover-page, .skills, .projects {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
